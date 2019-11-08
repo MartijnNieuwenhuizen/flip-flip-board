@@ -1,68 +1,100 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# simple-react-app
 
-## Available Scripts
+[![forthebadge](https://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](https://forthebadge.com)
 
-In the project directory, you can run:
+But you still get it.
 
-### `yarn start`
+Simple base app with react, react-router v4, hot-reload &amp; sass.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm i -g simple-react-app` to install the package.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`simple-react-app folderName` to start the boilerplate into `folderName` folder.
 
-### `yarn test`
+Or if you're using `npm@5.2.0` or above, you can simply run `npx simple-react-app folderName`, without the need to install the package globally.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What is this
+This is a base project that you can use to jumpstart your react apps, it works similarly to create-react-app, just install the package globally and use it to create as many projects as you want (check How to install for detailed instructions).
+It includes the last react spec as of today 01/03/2018, and uses react-router v4 to handle routes.
+Style is handled by sass/scss, Bundle is generated with webpack 4.
+NB: this is just front end, you can use whatever backend language you are most comfortable with.
 
-### `yarn build`
+## How to install
+You can use both npm or yarn, the version I used to create this project are:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ node -v ; npm -v ; yarn -v
+v8.8.1
+5.4.2
+1.2.1
+```
+If you just freshly installed yarn/npm you are good to go, else you might need to upgrade, for npm I use `n`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+npm install -g n
+```
+to install it and after that select at least the stable version (what I used).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+n stable
+```
 
-### `yarn eject`
+and now you have the latest stable version of node&npm.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm i -g simple-react-app` to install this package globally, from there you will be able to jumpstart as many boilerplates as you wish.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`simple-react-app folderName` to create a react boilerplate on the `folderName` folder. By default all dependencies are already installed, just `cd folderName` and start hacking.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`yarn start`/`npm start` to start dev server with hot reload, it's live on `localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+`yarn run build`/`npm run build` to build prod bundle, it includes both treeshaking and uglify to optimize the code as much as possible.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+`yarn test`/`npm test` run the tests with Jest and Enzyme, by default the test included only check for the correct render of base components & routes, all are passing.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+## Project structure
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+The boilerplate structure and files are the same as this repo minus the *bin* folder, everything else is exactly the same.
 
-### Advanced Configuration
+```
+*root*
+|
+├── */src/*
+│   ├── */assets/* where images and stuff are stored
+│   ├── */containers/* react-router jsx pages
+│   ├── *App.jsx* main layout
+│   ├── *Routes.jsx* front-end routes
+│   ├── *index.html* entry point
+│   ├── *index.jsx* javascript entry point
+│   ├── *style.scss* styling
+│   └── */tests/* contains test environment (Jest + Enzyme)
+│       ├── */__mock__/* contains setup to provide a valid path for imports
+│       ├── */_tests__/* the actual tests
+│       └── *setup.js* setup for enzyme for react 16
+├── *package.json* the whole package.json with every dependency and script, nothing is kept hidden
+├── *.eslintrc* eslint config
+├── *.babelrc* babel config (polyfills)
+├── *webpack.config.js* webpack config, it has a dev and prod environment
+└── *README.md* this file
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+## Tests
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+The testing environment is written in Jest and Enzyme.
+The included tests are very basic and only check the proper render of base components + routes, there are no snapshot tests, I did not feel they were needed being the components really basic, at the first change they would need to be updated, imho setting the wrong approach of _"hey tests are broken, let's regenerate snapshots again"_.
+While still basic, the default tests are easy to manage and expand, providing a smoother curve into testing with JavaScript and React.
 
-### `yarn build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Eslint
+
+This project uses AirBnB Javascript specs so you can write error-free react and javasctipt code, if you use Visual Studio Code, you can install eslint from the extension tab to activate this function, other editors just google _name of the editor + eslint_ you will find how to enable it for your editor.
+
+## How to contribute
+
+I wrote a [small guide](https://medium.com/@francesco.agnoletto/how-to-not-f-up-your-local-files-with-git-part-1-e0756c88fd3c) on how to contribute and the common etiquette to follow.
+

@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  min-height: 100vh;
+  background-color: #111111;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+section {
+  /* max-width: 35rem;
+  min-width: 35rem; */
+
+  background-color: #111111;
+  color: white;
+}
+
+ol {
+  width: 100%;
+  background-color: #111111;
+}
+
+li {
+  text-transform: uppercase;
+  // border-bottom: 4px solid black;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+li > div {
+  // width: 60rem;
+  margin: 0 auto;
+}
+
+span {
+  // font-size: 3rem;
+  // font-weight: bold;
+}
+
+h1 {
+  padding: 0 0 1rem;
+  color: #e6e609;
+  font-size: 3rem;
+  border-bottom: 5px solid #e6e609;
+}
+
+h1 > div {
+  width: 80rem;
+  margin: 0 auto;
+}
+
+img {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+span[data-status='healthy'] {
+  color: #19d10d;
+}
+span[data-status='unhealthy'] {
+  color: #cc4428;
+}
+span[data-status='degraded'] {
+  color: #e6e609;
+}
+
+span {
+  background: linear-gradient(
+    to bottom,
+    #111111 1%,
+    #4c4c4c 6%,
+    #595959 16%,
+    #666666 24%,
+    #474747 42%,
+    #2c2c2c 50%,
+    #474747 51%,
+    #474747 51%,
+    #4c4c4c 61%,
+    #666666 75%,
+    #4c4c4c 91%,
+    #111111 100%
+  );
+  color: #ffffff;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 64px;
+  padding-top: 8px;
+  margin-right: 2px;
+  height: 78px;
+  text-align: center;
+  transition: 1000ms linear transform;
+  transform: rotateX(0deg);
+  transform-origin: bottom;
+  vertical-align: middle;
+  width: 64px;
+}
+
+.emoji {
+  font-size: 3.3rem;
+}
